@@ -55,3 +55,8 @@ $$ \sigma(x) = {{1} \over {1+e^x}} $$
 
     위와 같은 형태의 함수를 **교차 엔트로피 오차 함수** 라고 한다.  
     줄여서 **오차 함수(error function)** 또는 **손실 함수(loss function)**라고 한다.
+
+# 3.4.2.2 경사하강법
+
+$$ w^{(k+1)} = w^{(k)} - \eta {{\delta E(w,b)} \over {\delta w}} $$
+$$ b^{(k+1)} = b^{(k)} - \eta {{\delta E(w,b)} \over {\delta b}} $$
