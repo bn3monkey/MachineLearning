@@ -20,7 +20,7 @@
   - 뉴런이 발화할 확률 `(C=1)`  
   예 : 개인가?
 
-    $$ p(C=1|x) = \sigma(w^Tx+b) $$
+    $$ p(C=1|x) = \sigma(w^{T}x+b) $$
 
   - 뉴런이 발화하지 않을 확률 `(C=0)`  
   예 : 개가 아닌가?
@@ -29,16 +29,16 @@
 
   - 뉴런이 발화할 확률 `(C=t)`
   
-      $$ y = \sigma(w^T+b) $$
+      $$ y = \sigma (w^{T}+b) $$
 
       라고 할 때  
       (C=1)이면 y이고, (C=0)이면 1-y이므로,  
       아래와 같이 표현할 수 있다.
 
-      $$p(C=t|x) = y^t(1-y)^{1-t} $$
+      $$p(C=t|x) = y^{t}(1-y)^{1-t} $$
 
   - 이 때 입력 데이터가 N개 존재하여, 그 값을 각각 <img src="/logistic_regression/tex/001fd25c5a52c6b4d381f8c071581bd5.svg?invert_in_darkmode&sanitize=true" align=middle width=108.04967414999999pt height=24.65753399999998pt/>이라고 하자.
-  - 이 때 출력 데이터도 N개 존재하고, 그 값을 <img src="/logistic_regression/tex/27413cd33c6f718117d8fb364284f787.svg?invert_in_darkmode&sanitize=true" align=middle width=14.06212004999999pt height=20.221802699999984pt/>이라고 하자.
+  - 이 때 출력 데이터도 N개 존재하고, 그 값을 <img src="/logistic_regression/tex/ec9b770ea2cbdbac68a649eb61dc4a33.svg?invert_in_darkmode&sanitize=true" align=middle width=14.06212004999999pt height=20.221802699999984pt/>이라고 하자.
   - N개의 입력 데이터에 대한 총 뉴런의 발화 확률은 아래와 같다.
   - 
   <p align="center"><img src="/logistic_regression/tex/fb87de8819758e1449cba05b722d31ee.svg?invert_in_darkmode&sanitize=true" align=middle width=511.09985520000004pt height=47.60747145pt/></p>
@@ -51,7 +51,7 @@
 
   - 따라서, 위의 함수에서 기울기를 구하기 위해서는 위의 함수를 미분해야 하나, 함수의 곱의 형태를 미분하는 것은 복잡하기 때문에 아래와 같이 log를 취해서 위의 함수를 덧셈 형태로 변환한다.
 
-    $$ E(w,b) = -logL(w,b) = - \sum_{n=1}^{N} \{t_nlogy_n + (1-t_n)log(1-y_n)\} $$
+    $$ E(w,b) = -\log{L(w,b)} = - \sum_{n=1}^{N} \{t_n\log{y_n} + (1-t_n)\log{(1-y_n)}\} $$
 
     위와 같은 형태의 함수를 **교차 엔트로피 오차 함수** 라고 한다.  
     줄여서 **오차 함수(error function)** 또는 **손실 함수(loss function)**라고 한다.
@@ -60,3 +60,5 @@
 
 <p align="center"><img src="/logistic_regression/tex/567cb0a3f8517ee1dd338bb87c787d15.svg?invert_in_darkmode&sanitize=true" align=middle width=190.8901005pt height=34.7253258pt/></p>
 <p align="center"><img src="/logistic_regression/tex/651baaae2a01b0d0d6a333954300908e.svg?invert_in_darkmode&sanitize=true" align=middle width=180.57800145pt height=34.7253258pt/></p>
+
+이 때, 
