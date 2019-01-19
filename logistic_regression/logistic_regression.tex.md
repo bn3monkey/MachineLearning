@@ -58,7 +58,32 @@ $$ \sigma(x) = {{1} \over {1+e^x}} $$
 
 # 3.4.2.2 경사하강법
 
+각 Parameter에 대한 기울기를 구하고, 그 기울기를 통해 오차를 수정해가면서 함수의 최대값을 찾아야 한다.  
+따라서 파라미터에 대하여 다음 파라미터 값을 구하려면 그 파라미터에 대하여 편미분한 값을 찾아야 한다.  
+아래는 오차 수정을 통한 다음 파라미터를 구하는 식이다.
+
 $$ w^{(k+1)} = w^{(k)} - \eta {{\delta E(w,b)} \over {\delta w}} $$
 $$ b^{(k+1)} = b^{(k)} - \eta {{\delta E(w,b)} \over {\delta b}} $$
 
-이 때, 
+- 이 때, $eta$는 학습률으로서 파라미터가 수렴되는 정도를 조절한다.
+- 보통 0.1, 0.01 정도의 작은 값이 쓰인다.
+
+- $E(w,b) = - \sum_{n=1}^{N} \{t_n\log{y_n} + (1-t_n)\log{(1-y_n)}\}$임을 기억한다.
+
+$$
+
+\eta {{\delta E(w,b)} \over {\delta w}}
+= \sum_{n=1}^{N} {{\delta E_{n}} \over {\delta y_{n}}}{{\delta y_{n}} \over {\delta w}}(\text{by chain rule})\\
+= \sum_{n=1}^{N} ({{t_{n}} \over {y_{n}}} - {{1-t_n}\over{1-y_n}})y_n(1-y_n)x_n \\
+= \sum_{n=1}^{N} (t_{n}(1-y_{n}) - y_{n}(1-t_{n}))x_{n}\\
+= - \sum_{n=1}^{N} (t_{n} - y_{n})x_{n}
+
+$$
+
+- 이와 같은 방법으로
+$$\eta {{\delta E(w,b)} \over {\delta b}} = - \sum_{n=1}^{N} (t_{n} - y_{n})$$
+
+- 따라서, 아래와 같이 다시 표현할 수 있다.
+
+$$ w^{(k+1)} = w^{(k)} + \sum_{n=1}^{N} (t_{n} - y_{n})x_{n} $$
+$$ b^{(k+1)} = b^{(k)} + \sum_{n=1}^{N} (t_{n} - y_{n}) $$
