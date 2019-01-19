@@ -43,7 +43,15 @@
   - 
   <p align="center"><img src="/logistic_regression/tex/fb87de8819758e1449cba05b722d31ee.svg?invert_in_darkmode&sanitize=true" align=middle width=511.09985520000004pt height=47.60747145pt/></p>
 
-  - <img src="/logistic_regression/tex/9d5b7e3db8e1f4e1fd3f34a3f899b21a.svg?invert_in_darkmode&sanitize=true" align=middle width=178.0820877pt height=124.74886710000001pt/>$ E(w,b) = -logL(w,b) = - \sum_{n=1}^{N} \{t_nlogy_n + (1-t_n)log(1-y_n)\} $$
+  - <img src="/logistic_regression/tex/e1693a187c655c73bb3552cfc9eb647b.svg?invert_in_darkmode&sanitize=true" align=middle width=50.54420084999999pt height=24.65753399999998pt/>를 **우도함수**라고 하며, 이 값이 최대가 되도록 파라미터를 수정하며 찾으면 네트워크가 학습이 잘 된 것이다.
+ 
+  - 함수의 최대값을 찾을 때, 아래와 같이 특정 지점에서 기울기가 0이 되는 지점에 접근해가는 방법으로 찾는다.
+   
+  ![2](image/2.png)
+
+  - 따라서, 위의 함수에서 기울기를 구하기 위해서는 위의 함수를 미분해야 하나, 함수의 곱의 형태를 미분하는 것은 복잡하기 때문에 아래와 같이 log를 취해서 위의 함수를 덧셈 형태로 변환한다.
+
+    $$ E(w,b) = -logL(w,b) = - \sum_{n=1}^{N} \{t_nlogy_n + (1-t_n)log(1-y_n)\} $$
 
     위와 같은 형태의 함수를 **교차 엔트로피 오차 함수** 라고 한다.  
     줄여서 **오차 함수(error function)** 또는 **손실 함수(loss function)**라고 한다.
