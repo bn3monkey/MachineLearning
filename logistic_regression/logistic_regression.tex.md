@@ -1,8 +1,3 @@
-<script type="text/javascript" async
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js? 
-config=TeX-MML-AM_CHTML">
-</script>
-
 # 3.4 로지스틱 회귀
 ## 3.4.1 계단 함수와 시그모이드 함수
 
