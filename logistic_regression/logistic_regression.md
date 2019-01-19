@@ -42,9 +42,8 @@
   - N개의 입력 데이터에 대한 총 뉴런의 발화 확률은 아래와 같다.
   - 
   <p align="center"><img src="/logistic_regression/tex/fb87de8819758e1449cba05b722d31ee.svg?invert_in_darkmode&sanitize=true" align=middle width=511.09985520000004pt height=47.60747145pt/></p>
-  
+
   - <img src="/logistic_regression/tex/9d5b7e3db8e1f4e1fd3f34a3f899b21a.svg?invert_in_darkmode&sanitize=true" align=middle width=178.0820877pt height=124.74886710000001pt/>$ E(w,b) = -logL(w,b) = - \sum_{n=1}^{N} \{t_nlogy_n + (1-t_n)log(1-y_n)\} $$
 
     위와 같은 형태의 함수를 **교차 엔트로피 오차 함수** 라고 한다.  
     줄여서 **오차 함수(error function)** 또는 **손실 함수(loss function)**라고 한다.
-    
