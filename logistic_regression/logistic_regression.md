@@ -58,7 +58,24 @@
 
 # 3.4.2.2 경사하강법
 
+각 Parameter에 대한 기울기를 구하고, 그 기울기를 통해 오차를 수정해가면서 함수의 최대값을 찾아야 한다.  
+따라서 파라미터에 대하여 다음 파라미터 값을 구하려면 그 파라미터에 대하여 편미분한 값을 찾아야 한다.  
+아래는 오차 수정을 통한 다음 파라미터를 구하는 식이다.
+
 <p align="center"><img src="/logistic_regression/tex/567cb0a3f8517ee1dd338bb87c787d15.svg?invert_in_darkmode&sanitize=true" align=middle width=190.8901005pt height=34.7253258pt/></p>
 <p align="center"><img src="/logistic_regression/tex/651baaae2a01b0d0d6a333954300908e.svg?invert_in_darkmode&sanitize=true" align=middle width=180.57800145pt height=34.7253258pt/></p>
 
-이 때, 
+- 이 때, <img src="/logistic_regression/tex/2fd2435c6b8bb17613938c0b8628fc1e.svg?invert_in_darkmode&sanitize=true" align=middle width=22.27938899999999pt height=20.221802699999984pt/>는 학습률으로서 파라미터가 수렴되는 정도를 조절한다.
+- 보통 0.1, 0.01 정도의 작은 값이 쓰인다.
+
+- <img src="/logistic_regression/tex/f08ceabd708cda0932b98b9389561268.svg?invert_in_darkmode&sanitize=true" align=middle width=368.75387175pt height=32.256008400000006pt/>임을 기억한다.
+
+<p align="center"><img src="/logistic_regression/tex/11e1f71886721f0e6e5c63c01f84032f.svg?invert_in_darkmode&sanitize=true" align=middle width=310.962333pt height=95.59347104999999pt/></p>
+
+- 이와 같은 방법으로
+<p align="center"><img src="/logistic_regression/tex/a55cb352d78e2e2f8f0be1c4e420f9b8.svg?invert_in_darkmode&sanitize=true" align=middle width=200.0449539pt height=47.60747145pt/></p>
+
+- 따라서, 아래와 같이 다시 표현할 수 있다.
+
+<p align="center"><img src="/logistic_regression/tex/48c2ac969354a65095228eba4020f161.svg?invert_in_darkmode&sanitize=true" align=middle width=226.8573285pt height=47.60747145pt/></p>
+<p align="center"><img src="/logistic_regression/tex/afae1df7d79a2e5e433df1091f9a6bfc.svg?invert_in_darkmode&sanitize=true" align=middle width=199.02421934999998pt height=47.60747145pt/></p>
