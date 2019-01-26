@@ -19,6 +19,7 @@
 
 ### 혼합 행렬
 모델이 예측한 값을 y, 실제 값을 t라고 하였을 때, y와 t의 결과에 따라 가능한 조합으로 나타낸 것이 아래의 **혼합 행렬**이다.
+
 || <img src="/3_7_model_evaluation/tex/0ae115a65fe296fc4641cc1190e57d4a.svg?invert_in_darkmode&sanitize=true" align=middle width=38.78604674999999pt height=21.18721440000001pt/> | <img src="/3_7_model_evaluation/tex/a42b1c71ca6ab3bfc0e416ac9b587993.svg?invert_in_darkmode&sanitize=true" align=middle width=38.78604674999999pt height=21.18721440000001pt/>|
 |-|-|-|
 |<img src="/3_7_model_evaluation/tex/ea8e02b76558beb2e7fbd75146337fe7.svg?invert_in_darkmode&sanitize=true" align=middle width=36.07293689999999pt height=21.18721440000001pt/>|TP (True positive, 진양성)|FN(False Negtive, 위음성)|
@@ -26,6 +27,7 @@
 
 ### 모델 평가 지표
 위의 혼합 행렬에 있는 값을 이용하여, 모델의 의미를 판단하는 지표는 아래와 같다.
+
 |명칭|식|설명|
 |-|-|-|
 |정답률(Accuracy)|<img src="/3_7_model_evaluation/tex/298ccc87cb0f1d16585fb5772bd49d01.svg?invert_in_darkmode&sanitize=true" align=middle width=113.12369805000002pt height=28.670654099999997pt/>|전체 데이터 중 예측 값과 실제 값이 맞은 비율|
