@@ -40,7 +40,7 @@
   - 이 때 입력 데이터가 N개 존재하여, 그 값을 각각 <img src="/logistic_regression/tex/001fd25c5a52c6b4d381f8c071581bd5.svg?invert_in_darkmode&sanitize=true" align=middle width=108.04967414999999pt height=24.65753399999998pt/>이라고 하자.
   - 이 때 출력 데이터도 N개 존재하고, 그 값을 <img src="/logistic_regression/tex/ec9b770ea2cbdbac68a649eb61dc4a33.svg?invert_in_darkmode&sanitize=true" align=middle width=14.06212004999999pt height=20.221802699999984pt/>이라고 하자.
   - N개의 입력 데이터에 대한 총 뉴런의 발화 확률은 아래와 같다.
-  - 
+   
   <p align="center"><img src="/logistic_regression/tex/fb87de8819758e1449cba05b722d31ee.svg?invert_in_darkmode&sanitize=true" align=middle width=511.09985520000004pt height=47.60747145pt/></p>
 
   - <img src="/logistic_regression/tex/e1693a187c655c73bb3552cfc9eb647b.svg?invert_in_darkmode&sanitize=true" align=middle width=50.54420084999999pt height=24.65753399999998pt/>를 **우도함수**라고 하며, 이 값이 최대가 되도록 파라미터를 수정하며 찾으면 네트워크가 학습이 잘 된 것이다.
