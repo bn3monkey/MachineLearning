@@ -58,3 +58,5 @@
 |정답률(Accuracy)|70%|<img src="/3_7_model_evaluation/tex/e2f426a5e144cec92088ec129cc68159.svg?invert_in_darkmode&sanitize=true" align=middle width=56.4843081pt height=27.77565449999998pt/>|
 |적합률(Precision)|80%|<img src="/3_7_model_evaluation/tex/dbd38b49106fe0cd9846036457e887f7.svg?invert_in_darkmode&sanitize=true" align=middle width=23.196467249999994pt height=27.77565449999998pt/>|
 |재현률(Recall)|66.6%|<img src="/3_7_model_evaluation/tex/8c2445f45a2492167e2a70f61dba34a4.svg?invert_in_darkmode&sanitize=true" align=middle width=23.196467249999994pt height=27.77565449999998pt/>|
+
+## 3.7.3 실험
