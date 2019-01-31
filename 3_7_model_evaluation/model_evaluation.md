@@ -60,3 +60,86 @@
 |재현률(Recall)|66.6%|<img src="/3_7_model_evaluation/tex/8c2445f45a2492167e2a70f61dba34a4.svg?invert_in_darkmode&sanitize=true" align=middle width=23.196467249999994pt height=27.77565449999998pt/>|
 
 ## 3.7.3 실험
+
+```python
+import tensorflow as tf
+from sklearn import datasets
+
+N = 300
+X, y = datasets.make_moons(N, noise=0.3)
+```
+달에 대한 2차원 데이터를 2 class로 300개를 생성한다.
+
+![3.7.5](image/5.png)
+
+```noise=0.3```으로 설정하는 것으로, 데이터가 겹치는 부분을 30% 정도 생성한다.
+
+![3.7.6](image/6.png)
+
+```python
+Y = y.reshape(N, 1) 
+```
+![3.7.7](image/7.png)
+
+데이터 모델링하기 편하게 [1, N] 형태의 벡터를 [N, 1] 형태의 벡터로 바꿔준다. 
+
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test =\
+    train_test_split(X, Y, train_size=0.8)
+```
+![3.7.8](image/8.png)
+
+전체 데이터셋을 훈련용 데이터와 테스트용 데이터를 8:2 비율로 나눈다. 
+
+```python
+
+x = tf.placeholder(tf.float32, shape=[None,2])
+t = tf.placeholder(tf.float32, shape=[None,1])
+```
+
+num_hidden = 2
+#입력층 - 은닉층
+W = tf.Variable(tf.truncated_normal([2, num_hidden]))
+b = tf.Variable(tf.zeros([num_hidden]))
+h = tf.nn.sigmoid(tf.matmul(x,W) + b)
+
+#은닉층 - 출력층
+V = tf.Variable(tf.truncated_normal([num_hidden, 1]))
+c = tf.Variable(tf.zeros([1]))
+y = tf.nn.sigmoid(tf.matmul(h,V) + c)
+
+cross_entropy = -tf.reduce_sum(t*tf.log(y) + (1-t)*tf.log(1-y))
+train_step = tf.train.GradientDescentOptimizer(0.05).minimize(cross_entropy)
+
+# 50% 이상이면 맞다고 처리
+correct_prediction = tf.equal(tf.to_float(tf.greater(y, 0.5)), t)
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+batch_size = 20
+n_batches = N
+
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
+
+from sklearn.utils import shuffle
+
+for epoch in range(500) :
+    X_, Y_ = shuffle(X_train, Y_train)
+
+    for i in range(n_batches) :
+        start = i * batch_size
+        end = start * batch_size
+        
+        sess.run(train_step, feed_dict = {
+            x : X_[start:end],
+            t : Y_[start:end]
+        })
+
+accuracy_rate = accuracy.eval(session=sess, feed_dict = {
+    x: X_test,
+    t: Y_test
+})
+print('accuracy: ', accuracy_rate)
+```
