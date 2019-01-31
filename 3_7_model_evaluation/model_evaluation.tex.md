@@ -61,26 +61,44 @@
 
 ## 3.7.3 실험
 
-```(python)
+```python
 import tensorflow as tf
 from sklearn import datasets
 
-# Make two class dataset 150, 150
 N = 300
 X, y = datasets.make_moons(N, noise=0.3)
+```
+달에 대한 2차원 데이터를 2 class로 300개를 생성한다.
 
-from sklearn.model_selection import train_test_split
-from sklearn.utils import shuffle
+![3.7.5](image/5.png)
 
+```noise=0.3```으로 설정하는 것으로, 데이터가 겹치는 부분을 30% 정도 생성한다.
+
+![3.7.6](image/6.png)
+
+```python
 Y = y.reshape(N, 1) 
+```
+![3.7.7](image/7.png)
+
+데이터 모델링하기 편하게 [1, N] 형태의 벡터를 [N, 1] 형태의 벡터로 바꿔준다. 
+
+```python
+from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test =\
     train_test_split(X, Y, train_size=0.8)
+```
+![3.7.8](image/8.png)
 
-num_hidden = 2
+전체 데이터셋을 훈련용 데이터와 테스트용 데이터를 8:2 비율로 나눈다. 
+
+```python
 
 x = tf.placeholder(tf.float32, shape=[None,2])
 t = tf.placeholder(tf.float32, shape=[None,1])
+```
 
+num_hidden = 2
 #입력층 - 은닉층
 W = tf.Variable(tf.truncated_normal([2, num_hidden]))
 b = tf.Variable(tf.zeros([num_hidden]))
@@ -104,6 +122,8 @@ n_batches = N
 init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
+
+from sklearn.utils import shuffle
 
 for epoch in range(500) :
     X_, Y_ = shuffle(X_train, Y_train)
