@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-class SimpleModel(object):
+class SimpleModel(object) :
 
     def __init__(self, n_in, n_hiddens, n_out) :
         self.n_in = n_in
@@ -8,6 +8,15 @@ class SimpleModel(object):
         self.n_out = n_out
         self.weights = []
         self.biases = []
+
+        self._x = None
+        self._t = None
+        self._keep_prob = None
+        self._sess = None
+        self._history = {
+            'accuracy' : [],
+            'loss' : []
+        }
 
     # f('W'x + b)
     def weight_variable(self, shape) :
@@ -20,7 +29,8 @@ class SimpleModel(object):
         return tf.Variable(initial)
 
     def inference(self, x, keep_prob) :
-       pass
+       y = x
+       return y
 
     def loss(self, y, t) :
         cross_entropy = tf.reduce_mean(-tf.reduce_sum(t*tf.log(y)), reduction_indices=[1])
@@ -32,13 +42,11 @@ class SimpleModel(object):
         return train_step
 
     def accuracy(self, y, t) :
-        #softmax
-        correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(t,1))
-        accu = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-        return accu
+        return y
 
     def fit(self, X_train, Y_train):
-        pass
+        return self._history
 
     def evaluate(self, X_test, Y_test):
-        pass
+        return None
+
