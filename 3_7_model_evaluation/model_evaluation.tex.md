@@ -100,11 +100,14 @@ t = tf.placeholder(tf.float32, shape=[None,1])
 
 num_hidden = 2
 #입력층 - 은닉층
+```
 W = tf.Variable(tf.truncated_normal([2, num_hidden]))
 b = tf.Variable(tf.zeros([num_hidden]))
 h = tf.nn.sigmoid(tf.matmul(x,W) + b)
-
+```
 #은닉층 - 출력층
+
+```
 V = tf.Variable(tf.truncated_normal([num_hidden, 1]))
 c = tf.Variable(tf.zeros([1]))
 y = tf.nn.sigmoid(tf.matmul(h,V) + c)
