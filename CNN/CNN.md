@@ -182,7 +182,7 @@ Image matrix에서 특정 범위 안에 있는 값 중 대표값을 만들어서
 
 ### CNN 구조도
 
-![CNN_6_3](image/6_3.PNG)
+![CNN_6_3](image/6_3.png)
 
 ### CNN의 강점
 
