@@ -42,7 +42,7 @@
     
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?%20e_{o}(t)%20=%20{{\delta%20E}%20\over%20{\delta%20q(t)}}%20%20"></p>
 
-    오차 함수의 패러미터인 <img src="https://latex.codecogs.com/gif.latex?U">, <img src="https://latex.codecogs.com/gif.latex?V">, <img src="https://latex.codecogs.com/gif.latex?W">, <img src="https://latex.codecogs.com/gif.latex?b">, <img src="https://latex.codecogs.com/gif.latex?c">에 대한 오차항은 아래와 같다.
+오차 함수의 패러미터인 <img src="https://latex.codecogs.com/gif.latex?U">, <img src="https://latex.codecogs.com/gif.latex?V">, <img src="https://latex.codecogs.com/gif.latex?W">, <img src="https://latex.codecogs.com/gif.latex?b">, <img src="https://latex.codecogs.com/gif.latex?c">에 대한 오차항은 아래와 같다.
 
     
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?%20{{\delta%20E}%20\over%20{\delta%20U}}%20=%20{{\delta%20E}%20\over%20{\delta%20p(t)}}({{\delta%20p(t)}%20\over%20{\delta%20U}})^{T}%20=%20e_{h}(t)x(t)^{T}"></p>
