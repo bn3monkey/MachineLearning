@@ -26,18 +26,19 @@
 ### 예시
 
 ![CNN_3_1](image/3_1.PNG)
-함수 $f(t)$, $g(t)$가 그래프 상에 놓여있다.
+함수 <img src="https://latex.codecogs.com/gif.latex?f(t)">, <img src="https://latex.codecogs.com/gif.latex?g(t)">가 그래프 상에 놓여있다.
 
 ![CNN_3_2](image/3_2.PNG)
-함수 $g(t)$를 반전한다.
+함수 <img src="https://latex.codecogs.com/gif.latex?g(t)">를 반전한다.
 
 ![CNN_3_3](image/3_3.PNG)
-함수 $g(-t)$를 이동한다.
+함수 <img src="https://latex.codecogs.com/gif.latex?g(-t)">를 이동한다.
 
 ![CNN_3_4](image/3_4.PNG)
-함수 $f(t)$와 $g(\tau-t)$를 곱한 값을 t에 대해서 적분한다.
+함수 <img src="https://latex.codecogs.com/gif.latex?f(t)">와 <img src="https://latex.codecogs.com/gif.latex?g(\tau-t)">를 곱한 값을 t에 대해서 적분한다.
 
-$$ \int_{-\infty}^{\infty}f(t)g(\tau-t) $$
+
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?%20\int_{-\infty}^{\infty}f(t)g(\tau-t)%20"></p>
 
 ## 3. Image에서의 Convolution 연산
 
@@ -66,26 +67,29 @@ $$ \int_{-\infty}^{\infty}f(t)g(\tau-t) $$
 ![CNN_4_6](image/4_6.PNG)
 - 현재 픽셀에서 가우시안 필터를 적용한 픽셀 값을 구하려면, 필터의 값과 씌워진 필터에 해당하는 픽셀을 곱한 뒤 나온 모든 값을 더하면 된다.
 
-$$ 2(1/16)+23(1/8)+25(1/16)+4(1/8)+32(1/4)+34(1/8)+24(1/16)+25(1/8)+23(1/16)=23.375 $$
+
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?%202(1/16)+23(1/8)+25(1/16)+4(1/8)+32(1/4)+34(1/8)+24(1/16)+25(1/8)+23(1/16)=23.375%20"></p>
 
 ![CNN_4_7](image/4_7.PNG)
 - 이러한 작업을 모든 픽셀에 대해서 수행하면, 위 그림의 오른쪽과 같이 blur처리된 이미지를 얻을 수 있다.
 
 ![CNN_4_8](image/4_8.PNG)
 
-$f(x,y)$ : 원래 image의 fixel 값  
-$g(x,y)$ : filter matrix의 값  
-$c_x$ : ilter matrix의 x축 중앙  
-$c_y$   filter matrix의 y축 중앙  
-$r_x$   filterm matrix의 너비  
-$r_y$   filter matrix의 높이  
+<img src="https://latex.codecogs.com/gif.latex?f(x,y)"> : 원래 image의 fixel 값  
+<img src="https://latex.codecogs.com/gif.latex?g(x,y)"> : filter matrix의 값  
+<img src="https://latex.codecogs.com/gif.latex?c_x"> : ilter matrix의 x축 중앙  
+<img src="https://latex.codecogs.com/gif.latex?c_y">   filter matrix의 y축 중앙  
+<img src="https://latex.codecogs.com/gif.latex?r_x">   filterm matrix의 너비  
+<img src="https://latex.codecogs.com/gif.latex?r_y">   filter matrix의 높이  
 
 라고 가정하면, 필터링한 픽셀의 값을 구하는 식 아래와 같이 유도할 수 있다.
 
-$$\sum_{-{r_{y}}\over{2}}^{{r_{x}}\over{2}}\sum_{-{r_{x}}\over{2}}^{{r_{x}}\over{2}}f(x-t_x,y-t_y)g(c_x-t_x,c_y-t_y) $$
+
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?\sum_{-{r_{y}}\over{2}}^{{r_{x}}\over{2}}\sum_{-{r_{x}}\over{2}}^{{r_{x}}\over{2}}f(x-t_x,y-t_y)g(c_x-t_x,c_y-t_y)%20"></p>
 
 앞서 소개한 Convolution을 나타낸 식인
-$$ \int_{-\infty}^{\infty}f(t)g(\tau-t) $$
+
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?%20\int_{-\infty}^{\infty}f(t)g(\tau-t)%20"></p>
 와 유사하며, 실제로 Filtering 작업은 Image에 filter matrix를 convolution 연산하는 것과 같은 의미이다.
 
 ## 4. CNN의 주요 용어 정리
