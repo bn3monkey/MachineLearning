@@ -32,7 +32,7 @@
      ![](https://latex.codecogs.com/svg.latex?%20E%20=%20E(U,V,W,b,c)%20)  
 
     이 떄, ![](https://latex.codecogs.com/gif.latex?p(t)%20=%20%20Ux(t)%20+%20Wh(t-1)%20+%20b,%20q(t)%20=%20Vh(t)%20+%20c)라고 하면,  
-    ![](https://latex.codecogs.com/gif.latex?h(t)%20=%20f(p(t)) , ![](https://latex.codecogs.com/gif.latex?y(t)%20=%20g(q(t)))이다.
+    ![](https://latex.codecogs.com/gif.latex?h(t)%20=%20f(p(t))) , ![](https://latex.codecogs.com/gif.latex?y(t)%20=%20g(q(t)))이다.
 
     따라서, 오차함수에서 각각 은닉층에 따른 오차항과 출력층에 따른 오차항을  
     ![](https://latex.codecogs.com/gif.latex?e_{h}(t)), ![](https://latex.codecogs.com/gif.latex?e_{o}(t))라고 할때, 아래와 같이 쓸 수 있다.
