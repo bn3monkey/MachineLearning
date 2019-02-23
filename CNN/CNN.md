@@ -77,10 +77,10 @@
 
 <img src="https://latex.codecogs.com/gif.latex?f(x,y)"> : 원래 image의 fixel 값  
 <img src="https://latex.codecogs.com/gif.latex?g(x,y)"> : filter matrix의 값  
-<img src="https://latex.codecogs.com/gif.latex?c_x"> : ilter matrix의 x축 중앙  
-<img src="https://latex.codecogs.com/gif.latex?c_y">   filter matrix의 y축 중앙  
-<img src="https://latex.codecogs.com/gif.latex?r_x">   filterm matrix의 너비  
-<img src="https://latex.codecogs.com/gif.latex?r_y">   filter matrix의 높이  
+<img src="https://latex.codecogs.com/gif.latex?c_x"> : filter matrix의 x축 중앙  
+<img src="https://latex.codecogs.com/gif.latex?c_y"> :  filter matrix의 y축 중앙  
+<img src="https://latex.codecogs.com/gif.latex?r_x"> :  filter matrix의 너비  
+<img src="https://latex.codecogs.com/gif.latex?r_y">  : filter matrix의 높이  
 
 라고 가정하면, 필터링한 픽셀의 값을 구하는 식 아래와 같이 유도할 수 있다.
 
@@ -113,6 +113,8 @@ Image Pixel을 표현하는 Vector에서의 차원(dimension)
     - Alpha Channel 
 
 ![CNN_5_1](image/5_1.PNG)
+
+
 출처 : https://en.wikipedia.org/wiki/Channel_(digital_image)
 
 ### 4-2. Filter / Kernel
